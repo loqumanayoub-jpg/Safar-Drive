@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safar Drive | Location de voitures à Marrakech</title>
+  <meta name="description" content="Safar Drive propose une location de voitures simple, rapide et flexible à Marrakech et dans tout le Maroc.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#accueil" class="brand" id="brand-name">Safar Drive</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar" aria-label="Menu principal" id="navbar">
+        <ul class="nav-list">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#nos-voitures">Nos voitures</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary nav-action" href="https://wa.me/212645823515?text=Bonjour,%20je%20souhaite%20réserver%20une%20voiture.%20Pouvez-vous%20me%20donner%20les%20disponibilités%20et%20les%20conditions%20?" data-action="whatsapp">Réserver sur WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Location de voitures au Maroc</span>
+          <h1>Votre route. <span class="text-accent">Votre liberté.</span></h1>
+          <p class="hero-text">Location de voitures simple, rapide et adaptée à vos besoins.</p>
+          <div class="hero-actions">
+            <a href="#nos-voitures" class="btn btn-secondary">Voir nos voitures</a>
+            <a href="https://wa.me/212645823515?text=Bonjour,%20je%20souhaite%20réserver%20une%20voiture.%20Pouvez-vous%20me%20donner%20les%20disponibilités%20et%20les%20conditions%20?" class="btn btn-primary" data-action="whatsapp">Réserver sur WhatsApp</a>
+          </div>
+          <div class="trust-bar">
+            <span class="trust-badge" aria-hidden="true">✓</span>
+            <p>Réservation rapide et simple</p>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="assets/images/hero.jpg" alt="Voiture de location sur une route ensoleillée" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <section class="search-panel">
+      <div class="container">
+        <div class="panel-header">
+          <h2>Recherchez votre voiture</h2>
+          <p>Filtrez nos modèles selon vos préférences et votre budget.</p>
+        </div>
+        <form id="search-form" class="search-form">
+          <div class="field-group">
+            <label for="search-model">Recherche par modèle</label>
+            <input type="text" id="search-model" name="searchModel" placeholder="Ex: Dacia, Peugeot, Renault">
+          </div>
+          <div class="field-group">
+            <label for="search-category">Type de véhicule</label>
+            <select id="search-category" name="searchCategory">
+              <option value="">Tous</option>
+              <option value="Berline">Berline</option>
+              <option value="SUV">SUV</option>
+              <option value="Citadine">Citadine</option>
+              <option value="Compacte">Compacte</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="search-transmission">Transmission</label>
+            <select id="search-transmission" name="searchTransmission">
+              <option value="">Tous</option>
+              <option value="Manuelle">Manuelle</option>
+              <option value="Automatique">Automatique</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="search-price">Prix maximum / jour</label>
+            <input type="number" id="search-price" name="searchPrice" placeholder="Ex: 400" min="0">
+          </div>
+          <div class="search-actions">
+            <button type="submit" class="btn btn-secondary">Rechercher</button>
+            <button type="button" class="btn btn-outline" id="reset-filters">Réinitialiser</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="vehicles-section" id="nos-voitures">
+      <div class="container section-header">
+        <div>
+          <p class="section-label">Nos voitures</p>
+          <h2>Découvrez notre sélection de véhicules pour vos déplacements.</h2>
+        </div>
+      </div>
+      <div class="container" id="vehicleGrid" aria-live="polite"></div>
+      <noscript class="noscript-warning">JavaScript est nécessaire pour afficher nos véhicules. Activez JavaScript pour voir toutes les options.</noscript>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="container section-header">
+        <div>
+          <p class="section-label">Nos services</p>
+          <h2>Une expérience claire, fiable et adaptée à votre voyage.</h2>
+        </div>
+      </div>
+      <div class="container services-grid">
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+          </div>
+          <h3>Réservation rapide</h3>
+          <p>Réservez votre voiture facilement via WhatsApp.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12h18" />
+              <path d="M3 6h18" />
+              <path d="M3 18h18" />
+            </svg>
+          </div>
+          <h3>Véhicules propres</h3>
+          <p>Des véhicules propres, entretenus et prêts à rouler.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92V19a2 2 0 0 1-2 2h-2" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              <path d="M4 4l16 16" />
+              <path d="M2 10a8 8 0 0 1 11 11" />
+            </svg>
+          </div>
+          <h3>Assistance 7/7</h3>
+          <p>Notre équipe reste disponible pour vous accompagner.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7h13v7H3z" />
+              <path d="M16 14h5" />
+              <path d="M19 14v4" />
+              <path d="M5 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+              <path d="M17 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+            </svg>
+          </div>
+          <h3>Livraison du véhicule</h3>
+          <p>Nous pouvons livrer votre voiture selon vos besoins.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="why-section" id="why">
+      <div class="container why-grid">
+        <div class="why-copy">
+          <p class="section-label">Pourquoi choisir Safar Drive ?</p>
+          <h2>Une location de voiture pensée pour votre voyage au Maroc.</h2>
+          <div class="why-list">
+            <div class="why-item"><span class="why-icon">✓</span><p>Prix clairs et transparents</p></div>
+            <div class="why-item"><span class="why-icon">✓</span><p>Service client réactif</p></div>
+            <div class="why-item"><span class="why-icon">✓</span><p>Large choix de véhicules</p></div>
+            <div class="why-item"><span class="why-icon">✓</span><p>Flexibilité et simplicité</p></div>
+          </div>
+        </div>
+        <div class="why-media">
+          <img src="assets/images/hero.jpg" alt="Voiture prête à partir pour un voyage marocain" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" id="process">
+      <div class="container section-header">
+        <div>
+          <p class="section-label">Comment ça marche ?</p>
+          <h2>Une réservation claire en trois étapes.</h2>
+        </div>
+      </div>
+      <div class="container process-grid">
+        <article class="process-step">
+          <div class="step-number">01</div>
+          <h3>Choisissez votre voiture</h3>
+          <p>Sélectionnez le véhicule qui correspond le mieux à votre voyage.</p>
+        </article>
+        <article class="process-step">
+          <div class="step-number">02</div>
+          <h3>Contactez-nous sur WhatsApp</h3>
+          <p>Envoyez-nous un message rapide pour vérifier la disponibilité.</p>
+        </article>
+        <article class="process-step">
+          <div class="step-number">03</div>
+          <h3>Confirmez votre réservation</h3>
+          <p>Recevez une confirmation simple et partez sur la route.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="section-label">À propos de Safar Drive</p>
+          <h2>Des solutions de location de voitures simples et flexibles au Maroc.</h2>
+          <p>Safar Drive propose une expérience de location axée sur la clarté, la proximité et la rapidité. Notre sélection de véhicules est adaptée aux trajets urbains comme aux escapades dans le sud marocain.</p>
+          <ul class="about-list">
+            <li>Contrats sans surprise</li>
+            <li>Processus 100% orienté client</li>
+            <li>Support disponible tous les jours</li>
+          </ul>
+        </div>
+        <div class="about-media">
+          <img src="assets/images/dacia-duster.jpg" alt="Véhicule de location photographié dans un environnement marocain" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-panel">
+        <div>
+          <h2>Prêt à prendre la route ?</h2>
+          <p>Réservez dès maintenant votre voiture sur WhatsApp.</p>
+        </div>
+        <a href="https://wa.me/212600000000?text=Bonjour,%20je%20souhaite%20réserver%20une%20voiture.%20Pouvez-vous%20me%20donner%20les%20disponibilités%20et%20les%20conditions%20?" class="btn btn-primary btn-large" data-action="whatsapp">Réserver maintenant</a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container section-header">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>Contactez-nous pour préparer votre prochain trajet.</h2>
+        </div>
+      </div>
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h3>Informations de contact</h3>
+          <ul>
+            <li><strong>Téléphone :</strong> <a href="tel:+212600000000" id="contact-phone"></a></li>
+            <li><strong>WhatsApp :</strong> <a href="https://wa.me/212600000000" id="contact-whatsapp"></a></li>
+            <li><strong>Email :</strong> <a href="mailto:contact@safardrive.ma" id="contact-email"></a></li>
+            <li><strong>Horaires :</strong> Lun - Dim : 08:00 - 22:00</li>
+            <li><strong>Adresse :</strong> <span id="contact-address"></span></li>
+          </ul>
+        </div>
+        <div class="map-card">
+          <h3>Notre emplacement</h3>
+          <div class="map-frame">
+            <iframe id="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10457.539197346508!2d-7.99337120320754!3d31.629472683582596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdae5d6be34a9d73%3A0x4fe2f2ed56c35d05!2sMarrakech%2C%20Maroc!5e0!3m2!1sfr!2sus!4v1700000000000!5m2!1sfr!2sus" aria-label="Carte Google Maps de Marrakech" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#accueil" class="footer-brand" id="footer-brand">Safar Drive</a>
+        <p>Votre partenaire pour une location de voitures simple et flexible.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#nos-voitures">Nos voitures</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li>Location de voitures</li>
+          <li>Réservation rapide</li>
+          <li>Livraison</li>
+          <li>Assistance</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+212600000000" id="footer-phone"></a></li>
+          <li><a href="https://wa.me/212600000000" id="footer-whatsapp"></a></li>
+          <li><a href="mailto:contact@safardrive.ma" id="footer-email"></a></li>
+          <li id="footer-address"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="footer-year"></span> Safar Drive. Tous droits réservés.</p>
+      <div class="social-list">
+      <a href="#" id="social-instagram" aria-label="Instagram">Instagram</a>
+      <a href="#" id="social-facebook" aria-label="Facebook">Facebook</a>
+      <a href="#" id="social-tiktok" aria-label="TikTok">TikTok</a>
+      <a href="#" id="social-whatsapp" aria-label="WhatsApp">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="whatsapp-fab" aria-label="Contact WhatsApp" data-action="whatsapp">
+    <span>WhatsApp</span>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
