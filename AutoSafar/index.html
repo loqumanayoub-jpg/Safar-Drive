@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutoSafar - Quality Cars</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-wrap">
+        <a href="#home"><img id="site-logo" src="" alt="AutoSafar logo" /></a>
+      </div>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#browse">Browse Cars</a></li>
+          <li><a href="#sell">Sell Your Car</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#account">My Account</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero" aria-label="Hero section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 id="dealer-name">AutoSafar</h1>
+        <p class="lead">Find your next car — quality checked, great prices.</p>
+      </div>
+
+      <form id="search-form" class="search-box" aria-label="Search cars">
+        <select id="filter-brand"><option value="">All Brands</option></select>
+        <select id="filter-model"><option value="">All Models</option></select>
+        <select id="filter-city"><option value="">All Cities</option></select>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Latest Cars -->
+  <main class="container">
+    <section id="browse" class="latest-cars">
+      <h2>Latest Cars</h2>
+      <div id="cars-grid" class="cars-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- Sell CTA -->
+    <section id="sell" class="sell-cta">
+      <div class="sell-inner">
+        <h3>Have a car to sell? List it today.</h3>
+        <a href="#sell-form" class="btn btn-cta" id="sell-button">Sell My Car</a>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <h2>Why choose AutoSafar</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <img src="images/icons/inspection.svg" alt="Vehicle inspection icon" />
+          <h4>Vehicle inspection</h4>
+        </div>
+        <div class="feature">
+          <img src="images/icons/prices.svg" alt="Competitive prices icon" />
+          <h4>Competitive prices</h4>
+        </div>
+        <div class="feature">
+          <img src="images/icons/finance.svg" alt="Easy financing icon" />
+          <h4>Easy financing</h4>
+        </div>
+        <div class="feature">
+          <img src="images/icons/trusted.svg" alt="Trusted dealership icon" />
+          <h4>Trusted dealership</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Footer anchor -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <h4>Contact details</h4>
+          <p id="dealer-contact"></p>
+        </div>
+        <div>
+          <h4>Follow us</h4>
+          <p id="dealer-socials"></p>
+        </div>
+        <div>
+          <h4>Location</h4>
+          <div id="dealer-map"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for details -->
+  <div id="car-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <div class="modal-body">
+        <div class="modal-slider">
+          <button class="slide-prev" id="slide-prev">‹</button>
+          <img id="modal-main-image" src="" alt="Car image" />
+          <button class="slide-next" id="slide-next">›</button>
+          <div id="modal-thumbs" class="modal-thumbs"></div>
+        </div>
+
+        <div class="modal-info">
+          <h3 id="modal-title"></h3>
+          <p id="modal-price" class="price"></p>
+          <ul id="modal-specs" class="specs"></ul>
+          <p id="modal-desc" class="description"></p>
+
+          <div class="modal-actions">
+            <a id="whatsapp-btn" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+            <a id="call-btn" class="btn btn-call">Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#browse">Browse Cars</a></li>
+          <li><a href="#sell">Sell Your Car</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address id="footer-contact"></address>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <div id="footer-socials"></div>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>&copy; <span id="footer-year"></span> <span id="footer-dealer">AutoSafar</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/cars.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
